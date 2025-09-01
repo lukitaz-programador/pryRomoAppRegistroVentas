@@ -7,9 +7,16 @@ namespace pryRomoAppRegVta
             InitializeComponent();
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (dtpFecha.Text=="" || txtCantidad.Text==""||txtPrecio.Text==""||txtProducto.Text=="" )
+            txtCantidad.Text = "";
+            txtProducto.Text = "";
+            txtPrecio.Text = "";
+        }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPrecio.Text == "")
             {
                 btnRegistrar.Enabled = false;
             }

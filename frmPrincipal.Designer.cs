@@ -37,6 +37,7 @@
             txtCantidad = new TextBox();
             txtPrecio = new TextBox();
             btnRegistrar = new Button();
+            btnCancelar = new Button();
             SuspendLayout();
             // 
             // lblFechaa
@@ -81,6 +82,7 @@
             // 
             // dtpFecha
             // 
+            dtpFecha.Font = new Font("Segoe UI", 9F);
             dtpFecha.Location = new Point(206, 31);
             dtpFecha.Name = "dtpFecha";
             dtpFecha.Size = new Size(200, 23);
@@ -88,6 +90,7 @@
             // 
             // txtProducto
             // 
+            txtProducto.Font = new Font("Segoe UI", 9F);
             txtProducto.Location = new Point(206, 77);
             txtProducto.Name = "txtProducto";
             txtProducto.Size = new Size(200, 23);
@@ -95,6 +98,7 @@
             // 
             // txtCantidad
             // 
+            txtCantidad.Font = new Font("Segoe UI", 9F);
             txtCantidad.Location = new Point(206, 123);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(200, 23);
@@ -102,10 +106,12 @@
             // 
             // txtPrecio
             // 
+            txtPrecio.Font = new Font("Segoe UI", 9F);
             txtPrecio.Location = new Point(206, 175);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(200, 23);
             txtPrecio.TabIndex = 7;
+            txtPrecio.TextChanged += txtPrecio_TextChanged;
             // 
             // btnRegistrar
             // 
@@ -116,13 +122,23 @@
             btnRegistrar.TabIndex = 8;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
-            btnRegistrar.Click += btnRegistrar_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(269, 235);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(84, 32);
+            btnCancelar.TabIndex = 9;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(480, 298);
+            Controls.Add(btnCancelar);
             Controls.Add(btnRegistrar);
             Controls.Add(txtPrecio);
             Controls.Add(txtCantidad);
@@ -149,5 +165,6 @@
         private TextBox txtCantidad;
         private TextBox txtPrecio;
         private Button btnRegistrar;
+        private Button btnCancelar;
     }
 }
