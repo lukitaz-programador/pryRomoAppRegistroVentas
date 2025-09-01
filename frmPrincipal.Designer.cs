@@ -132,9 +132,11 @@
             // mtbPrecio
             // 
             mtbPrecio.Location = new Point(206, 175);
+            mtbPrecio.Mask = "$99999999";
             mtbPrecio.Name = "mtbPrecio";
             mtbPrecio.Size = new Size(100, 23);
             mtbPrecio.TabIndex = 13;
+            mtbPrecio.ValidatingType = typeof(int);
             mtbPrecio.MaskInputRejected += mtbPrecio_MaskInputRejected;
             // 
             // frmPrincipal

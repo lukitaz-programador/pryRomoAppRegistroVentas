@@ -11,22 +11,9 @@ namespace pryRomoAppRegVta
         {
             nudCantidad.Text = "";
             cboProducto.Text = "";
-            nudPrecio.Text = "";
+            mtbPrecio.Text = "";
         }
 
-
-
-        private void nudPrecio_ValueChanged(object sender, EventArgs e)
-        {
-            if (nudPrecio.Value == 0)
-            {
-                btnRegistrar.Enabled = false;
-            }
-            else
-            {
-                btnRegistrar.Enabled = true;
-            }
-        }
 
         private void cboProducto_TextChanged(object sender, EventArgs e)
         {
@@ -44,17 +31,24 @@ namespace pryRomoAppRegVta
         {
             if (nudCantidad.Value == 0)
             {
-                nudPrecio.Enabled = false;
+                mtbPrecio.Enabled = false;
             }
             else
             {
-                nudPrecio.Enabled = true;
+                mtbPrecio.Enabled = true;
             }
         }
 
         private void mtbPrecio_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-
+            if (mtbPrecio.Text == "")
+            {
+                btnRegistrar.Enabled = false;
+            }
+            else
+            {
+                btnRegistrar.Enabled = true;
+            }
         }
     }
 }
