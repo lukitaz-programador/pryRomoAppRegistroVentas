@@ -38,6 +38,7 @@
             nudCantidad = new NumericUpDown();
             cboProducto = new ComboBox();
             mtbPrecio = new MaskedTextBox();
+            lblResultadosRegistro = new Label();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).BeginInit();
             SuspendLayout();
             // 
@@ -93,16 +94,17 @@
             // btnRegistrar
             // 
             btnRegistrar.Enabled = false;
-            btnRegistrar.Location = new Point(368, 235);
+            btnRegistrar.Location = new Point(367, 241);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(82, 32);
             btnRegistrar.TabIndex = 8;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(269, 235);
+            btnCancelar.Location = new Point(367, 279);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(84, 32);
             btnCancelar.TabIndex = 9;
@@ -122,6 +124,7 @@
             // 
             // cboProducto
             // 
+            cboProducto.DropDownStyle = ComboBoxStyle.DropDownList;
             cboProducto.FormattingEnabled = true;
             cboProducto.Location = new Point(206, 77);
             cboProducto.Name = "cboProducto";
@@ -131,19 +134,30 @@
             // 
             // mtbPrecio
             // 
+            mtbPrecio.Enabled = false;
             mtbPrecio.Location = new Point(206, 175);
-            mtbPrecio.Mask = "$99999999";
             mtbPrecio.Name = "mtbPrecio";
             mtbPrecio.Size = new Size(100, 23);
             mtbPrecio.TabIndex = 13;
             mtbPrecio.ValidatingType = typeof(int);
-            mtbPrecio.MaskInputRejected += mtbPrecio_MaskInputRejected;
+            mtbPrecio.TextChanged += mtbPrecio_TextChanged;
+            // 
+            // lblResultadosRegistro
+            // 
+            lblResultadosRegistro.BorderStyle = BorderStyle.FixedSingle;
+            lblResultadosRegistro.Font = new Font("Segoe UI", 9F);
+            lblResultadosRegistro.Location = new Point(36, 222);
+            lblResultadosRegistro.Name = "lblResultadosRegistro";
+            lblResultadosRegistro.Size = new Size(291, 111);
+            lblResultadosRegistro.TabIndex = 14;
+            lblResultadosRegistro.Text = "...";
             // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(480, 298);
+            ClientSize = new Size(480, 342);
+            Controls.Add(lblResultadosRegistro);
             Controls.Add(mtbPrecio);
             Controls.Add(cboProducto);
             Controls.Add(nudCantidad);
@@ -156,6 +170,7 @@
             Controls.Add(lblFechaa);
             Name = "frmPrincipal";
             Text = "App Registro de Ventas";
+            Load += frmPrincipal_Load;
             ((System.ComponentModel.ISupportInitialize)nudCantidad).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -173,5 +188,6 @@
         private NumericUpDown nudCantidad;
         private ComboBox cboProducto;
         private MaskedTextBox mtbPrecio;
+        private Label lblResultadosRegistro;
     }
 }
